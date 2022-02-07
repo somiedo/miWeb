@@ -70,8 +70,8 @@ email: "pablo.somiedo@gmail.com"
 highlight_name: true
 ---
 
-Biólogo de formación y de vocación, me encanta aprovechar las posibilidades que nos brindan las nuevas tecnologías, habiendo desarrollado parte de mi carrera profesional en el campo de la consultoría informática.
+Biólogo de formación y de vocación, me encanta aprovechar las posibilidades que nos brindan las nuevas tecnologías, habiendo desarrollado parte de mi carrera profesional en el campo de la consultoría informática ahora me centro en las Ciencias de la Vida.
 
-Mi motivación por seguir aprendiendo hace que actualmente este cursando el ***Máster en Bioinformática*** de la UOC / Universidad de Barcelona, para utilizar las nuevas técnicas de machine learning en proyectos de medioambiente.
+Mi motivación por seguir aprendiendo hace que actualmente este cursando el **Máster en Bioinformática de la UOC / Universidad de Barcelona**, para utilizar las nuevas técnicas de *machine learning* en proyectos biológicos.
 
 {{< icon name="download" pack="fas" >}} Descarga mi {{< staticref "uploads/Pablo_Garcia.pdf" "newtab" >}}CV{{< /staticref >}}.
