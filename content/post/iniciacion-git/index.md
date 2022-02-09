@@ -46,20 +46,20 @@ categories:
 
 Git es un sistema de control de versiones de nuestro código.
 
-Hablamos de tener nuestro código siempre salvado y protegido. Nunca se sabe cuando puede fallarnos el equipo donde guardamos nuestro programa y tirar por la borda todo el trabajo que llevásemos realizado.
+Hablamos de tener nuestro código siempre a salvo y protegido. Nunca se sabe cuando puede fallarnos el equipo donde guardamos nuestro programa y tirar por la borda todo el trabajo que llevásemos realizado.
 
-Para ello no hay nada mejor que utilizar la *nube*. Esto nos mantiene el código siempre a salvo y además nos permite llevar un control de versiones que siempre será importante mantener. Nunca se sabe cuaándo necesitaremos volver atrás para retomar el código antiguo. Además estas herramientas nos proporcionan una gran ayuda a la hora de poder desarrollar en equipo donde varios desarrolladores *tocan* el código al mismo tiempo.
+Para ello no hay nada mejor que utilizar la *nube*. La nube además nos permite acceder a los ficheros desde cualquier lugar y además nos permite llevar un control de versiones que siempre será importante mantener. Nunca se sabe cuándo necesitaremos volver atrás para retomar el código antiguo. Además estas herramientas nos proporcionan una gran ayuda a la hora de poder trabajar en equipo donde varios desarrolladores *tocan* el código al mismo tiempo.
 
 > Git es un software de control de versiones de nuestro código
 
-**Git** nos permite hacer todo esto, no voy a decir sin esfuerzo pero seguro que nunca nos arrepentiremos de haberlo implementado en nuestro ordenador.
+**Git** nos permite hacer todo esto, no voy a decir sin esfuerzo pero seguro que nunca nos arrepentiremos de haberlo implementado en nuestra rutina de trabajo.
 
-Yo utilizo **GitHub**, me acostumbré a la herramienta de escritorio que tiene para Windows y es el software que utilizo aunque ahora lo vengo utilizando desde la consola a base de comandos (más rápido). No hay que asustarse con esto ya que tampoco son tantos comandos y con una pequeña *chuleta* pronto te manejas y ves lo útil que resulta.
+Yo utilizo **GitHub**, me acostumbré a la herramienta de escritorio que tiene para Windows y es el software que utilizo aunque ahora lo vengo utilizando desde la consola a base de comandos (más rápido). No hay que asustarse con esto ya que tampoco son tantos comandos y con una pequeña *chuleta* pronto te manejas y ves lo útil que puede resultar.
 
 ![Flujo de trabajo en Git](./git_repo.webp "Flujo de trabajo en Git")
 
 
-Para empezar tenemos que tener una cuenta en *GitHub* que es gratuita y permite que subas todo tu código y lo mantengas organizado.
+Para empezar tenemos que tener una cuenta en *GitHub* que es gratuita y permite que subas todo tu código y lo mantengas organizado. Además de instalar *Git* en nuestro ordenador.
 
 Mi flujo de trabajo es el siguiente:
 

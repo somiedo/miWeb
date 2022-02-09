@@ -6,3 +6,6 @@
 public/
 jsconfig.json
 node_modules/
+
+# Cambios en el sitio web
+SubirCambios.md 

@@ -60,12 +60,12 @@ contact_links:
 
 main_menu:
   enable: true
-  align: r
+  align: c
   show_logo: true
   show_language: false
   show_day_night: true
   show_search: true
-  highlight_active_link: true
+  highlight_active_link: false
 
 # Localization
 

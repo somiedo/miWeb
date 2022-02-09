@@ -5,88 +5,40 @@
  *  https://github.com/gcushen/hugo-academic
  **************************************************/
 
-a,
-a:visited,
-h3.article-title a:hover {
-    color: rgb(76,175,80);
+.navbar{
+    background: #f8faf8;
+    text-transform: uppercase;
 }
 
-a:hover {
-    color: rgb(0,230,118);
+.navbar{
+    box-shadow: 0 0.125rem 0.25rem 0 #23252f5b;
 }
 
-.navbar-default .navbar-nav li a:hover,
-.btn-primary,
-.btn-primary.btn-outline {
-    color: rgb(76,175,80);
+/* Título en el tema claro*/
+ .navbar-light .navbar-brand {
+    color: #4caf50;
+}
+/* Título encima tema claro*/
+.navbar-light .navbar-brand:hover{
+    color: #23252f;
 }
 
-/* Articles */
-
-.article-title a {
-    color: #151515;
+/* Título en el tema oscuro*/
+.dark .navbar-brand {
+    color: #f8faf8;
 }
 
-.article-metadata a {
-    color: #888;
+/* Menú claro*/
+#navbar-main .main-menu-item ul li .nav-link {
+    color: #4caf50;
 }
 
-.article-metadata a:hover {
-    color: rgb(76,175,80);
+/* Iconos derecha: Twitter, buscar, cambio tema en el tema claro*/
+.navbar-light .navbar-nav .nav-link {
+    color: #4caf50;
 }
 
-/* Standard buttons */
-
-.btn-primary,
-.btn-primary.btn-outline {
-    border-color: rgb(76,175,80);
+/* Iconos derecha: Twitter, buscar, cambio tema; raton encima en el tema claro*/
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #4caf50;
 }
-
-/* Hover buttons */
-
-.btn-primary.btn-outline:hover {
-    border-color: rgb(76,175,80);
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary:visited,
-.btn-primary.btn-outline:active {
-    background-color: rgb(76,175,80);
-}
-
-
-/* navbar */
-
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:hover {
-    color: rgb(76,175,80);
-    font-weight: 700;
-    background-color: transparent !important; /* Override Bootstrap. */
-}
-
-
-
-/* Toolbar buttons */
-
-.btn-toolbar .btn.btn-primary {
-    background: rgb(0,230,118);
-    background-color: rgb(227, 237, 239) !important;
-}
-
-.btn-toolbar .btn.btn-primary:hover,
-.btn-toolbar .btn.btn-primary:focus {
-    background-color: rgb(0,230,118);
-}
-
-.btn-toolbar .btn.btn-primary:active,
-.btn-toolbar .btn.btn-primary.active {
-    background-color: rgb(0,230,118);
-}
-
-
-
-
