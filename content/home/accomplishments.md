@@ -76,7 +76,7 @@ item:
   date_end: ""
   date_start: "2014-11-01"
   description: "Certificación piloto RPAS (drones hasta 25kg)"
-  organization: Spanish ATO
+  organization: Spanish-ATO
   organization_url: 
   title: RPAS Pilot Certificate
   url: 
