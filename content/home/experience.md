@@ -37,7 +37,7 @@ experience:
         * Educación ambiental
         * Análisis de datos ambientales
 
-  - title: TECNOLOGÍAS DE LA INFORMACIÓN Y LA COMUNICACIÓN
+  - title: DESARROLLO WEB
     company: FREELANCE
     company_url: ''
     company_logo: web
