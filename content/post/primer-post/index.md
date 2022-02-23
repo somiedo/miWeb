@@ -48,7 +48,7 @@ Hoy comienzo una nueva andadura, sí, voy a intentar plasmar en este blog los co
 
 Además de escribir sobre estos dos lenguajes que son imprescindibles en cualquier investigador que hoy se dedique a la ciencia, desarrollaré artículos sobre otras herramientas que deben ser conocidas por cualquier estudiante ya que pueden ayudarle tanto en su carrera formativa como en su posterior vida laboral. Así, escribiré sobre lenguaje **Markdown**, referencias bibliográficas en los trabajos, bases de datos, editores de texto, y cualquier otro tema que seguro resultará de interés.
 
-También algo sobre GitHub que para eso estamos donde estamos. Me centraré en lo más básico para hacernos la vida más fácil a la hora de tener nuestro código bien respaldado.
+También algo sobre **GitHub** que para eso estamos donde estamos. Me centraré en lo más básico para hacernos la vida más fácil a la hora de tener nuestro código bien respaldado.
 
 
 
