@@ -72,7 +72,7 @@ item:
   organization_url: http://ude.my
   title: Tensorflow 2.0 Guía completa para el Nuevo Tensorflow
   url: http://ude.my/UC-HLOUITLR
-- certificate_url: 
+- certificate_url: ./uploads/certificado-drones.pdf
   date_end: ""
   date_start: "2014-11-01"
   description: "Certificación piloto RPAS (drones hasta 25kg)"
