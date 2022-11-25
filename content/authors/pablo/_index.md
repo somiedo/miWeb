@@ -43,15 +43,19 @@ social:
 - icon: envelope
   icon_pack: fas
   link: 'mailto:pablo.somiedo@gmail.com'
+  display:
+    header: true
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/pabloSomiedo
   label: Follow me on Twitter
   display:
-    header: true
+    header: false
 - icon: github
   icon_pack: fab
   link: https://github.com/somiedo
+  display:
+    header: true
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/pablosomiedo/

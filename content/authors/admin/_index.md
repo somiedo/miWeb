@@ -48,7 +48,7 @@ social:
   link: https://twitter.com/pabloSomiedo
   label: Follow me on Twitter
   display:
-    header: true
+    header: false
 - icon: github
   icon_pack: fab
   link: https://github.com/somiedo
