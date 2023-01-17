@@ -30,7 +30,7 @@ education:
   courses:
   - course: Máster Bioinformática y Bioestadística
     institution: UOC / Universidad de Barcelona
-    year: 2022
+    year: 2023
   - course: Licenciado CC. Biológicas
     institution: Universidad Complutense de Madrid
     year: 1994
