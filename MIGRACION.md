@@ -328,3 +328,22 @@ se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Wor
 - **`README.md`** reescrito (qué es, requisitos, uso en local, estructura, cómo añadir un post, despliegue) y **`CLAUDE.md`** nuevo.
 - `package.json`: script `build` = `hugo --gc --minify && pnpm run pagefind` (comando único para local y Cloudflare).
 - Se mantiene `.editorconfig` (genérico: UTF-8, LF, 2 espacios).
+
+## 13. Fase 4: Worker en Cloudflare (2026-09-24)
+
+- `wrangler.jsonc`: Worker `miweb` de solo assets (sin `main`), `assets.directory: ./public`,
+  `not_found_handling: 404-page`, `html_handling: auto-trailing-slash`, `compatibility_date: 2026-09-24`.
+  Fuentes: developers.cloudflare.com/workers/static-assets/ (routing/static-site-generation) y /workers/wrangler/configuration/.
+- Wrangler 4.138.0 fijado en `devDependencies` (`--save-exact`).
+- `layouts/index.headers`: sustituye al del módulo `integrations/netlify` (que pegaba `/*` con la primera cabecera).
+  Emite X-Frame-Options SAMEORIGIN, nosniff, HSTS, Referrer-Policy y Permissions-Policy. Se omite X-XSS-Protection (obsoleta).
+- Probado en local con `wrangler dev` y luego en producción.
+- **Primer despliegue manual** (Pablo: `wrangler login --browser=false` + `wrangler deploy`), versión `a0e938fd`:
+  **https://miweb.pablo-somiedo.workers.dev**. El login OAuth normal falló con `request_forbidden / No CSRF value
+  in the session cookie`; se resolvió iniciando sesión antes en dash.cloudflare.com y abriendo la URL a mano.
+- Verificado en producción: portada, blog, posts, etiquetas, PDFs, RSS, sitemap, robots y Pagefind (200); 404 propia (404);
+  301 de `/post/*`, `/tag/*`, `/category/*` y CVs antiguos; cabeceras de seguridad; modo oscuro; móvil (375 px, menú,
+  sin scroll horizontal); fuentes autoalojadas cargadas y sin peticiones a Google Fonts.
+- `baseURL` → `https://miweb.pablo-somiedo.workers.dev/` (el primer despliegue salió con `example.com` en canónicas y sitemap).
+- `pnpm dev` pasa a `hugo server --renderToMemory`: el servidor de desarrollo escribía en `public/` y podía colarse en un despliegue.
+- Pendiente: redesplegar con el `baseURL` correcto y activar Cloudflare Web Analytics (token).
