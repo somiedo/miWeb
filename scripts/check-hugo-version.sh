@@ -9,6 +9,6 @@ case "$actual" in
     echo "Hugo ${expected} extended: OK" ;;
   *)
     echo "ERROR: se esperaba Hugo ${expected} extended (mise.toml) y se encontró: ${actual:-ninguno}" >&2
-    echo "En Workers Builds, define HUGO_VERSION=${expected} en Settings > Build > Build variables and secrets." >&2
+    echo "En local: mise install. En Workers Builds, scripts/build.sh instala la versión correcta en ./.bin." >&2
     exit 1 ;;
 esac

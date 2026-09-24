@@ -363,3 +363,8 @@ se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Wor
   push a `hugoblox` no disparaba nada; corregido a `hugoblox`.
 - `scripts/check-hugo-version.sh`: `pnpm build` comprueba primero que Hugo es la versión extended de `mise.toml` y, si no,
   falla con un mensaje que indica cómo fijar `HUGO_VERSION` en Workers Builds.
+- **Segundo intento fallido** (commit `d7a6ab1`): con `HUGO_VERSION` ya en *Build variables*, la imagen instala Hugo 0.162.0
+  **estándar** (`linux/amd64`, sin `+extended`); la comprobación de versión lo detectó y paró la compilación.
+- Solución: `pnpm build` → `scripts/build.sh`, que si el Hugo del sistema no es la versión extended exacta ejecuta
+  `scripts/install-hugo.sh`: descarga `hugo_extended_<v>_linux-<arch>.tar.gz` de las releases oficiales de GitHub y verifica
+  su SHA-256 contra un hash fijado en el script (tomado de `hugo_0.162.0_checksums.txt`). Se instala en `./.bin` (ignorado).

@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "hugo server --disableFastRender --renderToMemory",
-    "build": "sh scripts/check-hugo-version.sh && hugo --gc --minify && pnpm run pagefind",
+    "build": "sh scripts/build.sh",
     "pagefind": "pagefind --site public"
   },
   "dependencies": {

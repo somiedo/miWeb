@@ -9,7 +9,7 @@ Idioma del sitio y de la documentación: español.
 mise install                        # herramientas con las versiones de mise.toml
 pnpm install --frozen-lockfile      # dependencias Node (Tailwind, Pagefind)
 pnpm dev                            # hugo server en http://localhost:1313 (en memoria: no toca public/)
-pnpm build                          # hugo --gc --minify + Pagefind → public/
+pnpm build                          # scripts/build.sh: comprueba Hugo, hugo --gc --minify + Pagefind → public/
 hugo --gc --minify --printPathWarnings --printI18nWarnings   # compilación con avisos
 hugo mod graph                      # módulos HugoBlox y sus versiones
 ```
@@ -18,7 +18,9 @@ hugo mod graph                      # módulos HugoBlox y sus versiones
 
 Hugo extended 0.162.0 · Go 1.27.1 · Node 22.23.3 · pnpm 10.14.0 (`mise.toml`).
 Los módulos HugoBlox están fijados por pseudo-versión en `go.mod`/`go.sum`.
-Si cambias una versión, actualiza también `mise.toml`, `hugoblox.yaml` (`build.hugo_version`), las variables de Workers Builds
+En Workers Builds, `HUGO_VERSION` instala la edición estándar (no extended): `scripts/build.sh` descarga entonces
+Hugo extended en `./.bin` con `scripts/install-hugo.sh`, que verifica un SHA-256 fijado en el propio script.
+Si cambias una versión, actualiza también los hashes de `scripts/install-hugo.sh` (Hugo), `mise.toml`, `hugoblox.yaml` (`build.hugo_version`), las variables de Workers Builds
 (`HUGO_VERSION`, `GO_VERSION`, `NODE_VERSION`, `PNPM_VERSION`) y la tabla de `README.md`.
 
 ## Convenciones

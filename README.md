@@ -84,7 +84,8 @@ Configuración en el panel (Workers & Pages → `miweb` → Settings → Build):
 | Deploy command | `npx wrangler deploy` |
 | Build variables | `HUGO_VERSION=0.162.0`, `GO_VERSION=1.27.1`, `NODE_VERSION=22.23.3`, `PNPM_VERSION=10.14.0` |
 
-Las build variables deben coincidir con `mise.toml`.
+Las build variables deben coincidir con `mise.toml`. La imagen de Cloudflare instala `HUGO_VERSION` en edición
+estándar, así que `scripts/build.sh` descarga Hugo extended verificado (`scripts/install-hugo.sh`) si hace falta.
 
 **Manual (desde tu equipo):**
 
