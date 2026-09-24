@@ -357,3 +357,9 @@ se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Wor
   `GO_VERSION=1.27.1`, `NODE_VERSION=22.23.3`, `PNPM_VERSION=10.14.0`. Sin API token propio ni secrets en GitHub.
 - **Rama de producción temporal: `hugoblox`**, para no compilar el `master` de Wowchemy. Tras el merge se cambia a `master`.
 - Sustituye al workflow de GitHub Actions del plan original (`.github/workflows/deploy.yml` no se crea).
+- **Primer intento de Workers Builds fallido** (commit `e5f92ef`): Cloudflare compiló con Hugo 0.147.7 (versión por defecto
+  de la imagen) en lugar de 0.162.0 → `function "__html" not defined` al parsear `blox/comparison-table/component.jsx`.
+  Reproducido en local con `mise exec hugo-extended@0.147.7`. Antes, la rama configurada era `main` (valor por defecto) y el
+  push a `hugoblox` no disparaba nada; corregido a `hugoblox`.
+- `scripts/check-hugo-version.sh`: `pnpm build` comprueba primero que Hugo es la versión extended de `mise.toml` y, si no,
+  falla con un mensaje que indica cómo fijar `HUGO_VERSION` en Workers Builds.
