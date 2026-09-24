@@ -1,8 +1,8 @@
 {{/* Cloudflare Web Analytics (sin cookies). Se activa con params.cloudflare_web_analytics.token.
-     Solo en producción (hugo sin `server`). Snippet oficial:
+     Solo en producción (hugo sin `server`). Snippet oficial (tal como lo da el panel):
      https://developers.cloudflare.com/web-analytics/get-started/ */}}
 {{- with site.Params.cloudflare_web_analytics.token -}}
   {{- if hugo.IsProduction -}}
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{ dict "token" . | jsonify }}'></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{ dict "token" . | jsonify }}'></script>
   {{- end -}}
 {{- end -}}

@@ -294,4 +294,4 @@ hugoblox:
 # Token del sitio (es público: aparece en el HTML). Vacío = desactivado.
 # ──────────────────────────────────────────────────────────────────────────────
 cloudflare_web_analytics:
-  token: ""
+  token: "0c9211ebe0bb4fd1ad6f0a00fdde4496"

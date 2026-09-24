@@ -346,4 +346,5 @@ se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Wor
   sin scroll horizontal); fuentes autoalojadas cargadas y sin peticiones a Google Fonts.
 - `baseURL` → `https://miweb.pablo-somiedo.workers.dev/` (el primer despliegue salió con `example.com` en canónicas y sitemap).
 - `pnpm dev` pasa a `hugo server --renderToMemory`: el servidor de desarrollo escribía en `public/` y podía colarse en un despliegue.
-- Pendiente: redesplegar con el `baseURL` correcto y activar Cloudflare Web Analytics (token).
+- Cloudflare Web Analytics activado: sitio `miweb.pablo-somiedo.workers.dev`, token público en `params.yaml`, script con `type="module"` como el snippet del panel.
+- Pendiente: redesplegar con el `baseURL` correcto y la analítica.
