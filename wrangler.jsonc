@@ -1,0 +1,15 @@
+// Worker de solo assets estáticos (sin código de Worker): sirve la salida de Hugo en ./public.
+// Docs: https://developers.cloudflare.com/workers/static-assets/
+//       https://developers.cloudflare.com/workers/wrangler/configuration/
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "miweb",
+  "compatibility_date": "2026-09-24",
+  "assets": {
+    "directory": "./public",
+    // Rutas inexistentes → 404.html más cercano con estado 404
+    "not_found_handling": "404-page",
+    // foo/index.html se sirve como /foo/ (valor por defecto, explícito)
+    "html_handling": "auto-trailing-slash"
+  }
+}

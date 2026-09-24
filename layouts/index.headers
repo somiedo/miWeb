@@ -1,0 +1,32 @@
+{{- /*
+  Cabeceras HTTP (_headers) para Cloudflare Workers Static Assets.
+  Sustituye a index.headers del módulo integrations/netlify, cuyo recorte de espacios pega la ruta "/*"
+  con la primera cabecera y omite X-Frame-Options (ver MIGRACION.md §10).
+  Docs: https://developers.cloudflare.com/workers/static-assets/headers/
+  Se omite X-XSS-Protection (obsoleta; MDN desaconseja enviarla).
+*/ -}}
+{{- $sec := site.Params.hugoblox.security | default dict -}}
+{{- $csp := $sec.csp | default dict -}}
+{{- $csp_policy := $csp.policy | default "" -}}
+{{- $csp_report_only := $csp.report_only | default false -}}
+{{- $frame_options := $sec.frame_options | default "sameorigin" -}}
+{{- $default_perms := "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" -}}
+{{- $permissions_policy := $sec.permissions_policy | default $default_perms -}}
+# Generado por layouts/index.headers
+/*
+{{- if eq $frame_options "sameorigin" }}
+  X-Frame-Options: SAMEORIGIN
+{{- else if ne $frame_options "allow" }}
+  X-Frame-Options: DENY
+{{- end }}
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Referrer-Policy: strict-origin-when-cross-origin
+{{- with $csp_policy }}
+  Content-Security-Policy{{ if $csp_report_only }}-Report-Only{{ end }}: {{ replaceRE `\s+` " " (trim . " \n") }}
+{{- end }}
+{{- with $permissions_policy }}
+  Permissions-Policy: {{ replaceRE `\s+` " " (trim . " \n") }}
+{{- end }}
+/index.xml
+  Content-Type: application/rss+xml; charset=utf-8

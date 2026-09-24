@@ -15,5 +15,8 @@
   },
   "version": "1.0.0",
   "packageManager": "pnpm@10.14.0",
-  "description": "Web personal de Pablo García (HugoBlox Academic CV + Cloudflare Workers)"
+  "description": "Web personal de Pablo García (HugoBlox Academic CV + Cloudflare Workers)",
+  "devDependencies": {
+    "wrangler": "4.138.0"
+  }
 }
