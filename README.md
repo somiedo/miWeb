@@ -69,10 +69,30 @@ pnpm build            # compilación de producción en public/ + índice de bús
 
 ## Despliegue
 
-Cada push a `master` lo compila y despliega Cloudflare (Workers Builds), con estas variables de entorno de compilación,
-que deben coincidir con `mise.toml`: `HUGO_VERSION`, `GO_VERSION`, `NODE_VERSION` y `PNPM_VERSION`.
-La configuración del Worker está en `wrangler.jsonc` (sirve `public/`, con página 404 propia).
-Las redirecciones de URLs antiguas se generan en `public/_redirects`.
+Publicada en **https://miweb.pablo-somiedo.workers.dev** como Worker de solo assets (`wrangler.jsonc`: sirve `public/`,
+con página 404 propia). Las redirecciones de URLs antiguas y las cabeceras de seguridad se generan en
+`public/_redirects` y `public/_headers`.
+
+**Automático (Workers Builds):** Cloudflare compila y despliega en cada push a la rama de producción.
+Configuración en el panel (Workers & Pages → `miweb` → Settings → Build):
+
+| Ajuste | Valor |
+|---|---|
+| Repositorio | `somiedo/miWeb` |
+| Rama de producción | `master` |
+| Build command | `pnpm build` |
+| Deploy command | `npx wrangler deploy` |
+| Build variables | `HUGO_VERSION=0.162.0`, `GO_VERSION=1.27.1`, `NODE_VERSION=22.23.3`, `PNPM_VERSION=10.14.0` |
+
+Las build variables deben coincidir con `mise.toml`.
+
+**Manual (desde tu equipo):**
+
+```bash
+pnpm exec wrangler login
+pnpm build
+pnpm exec wrangler deploy
+```
 
 ## Licencia
 

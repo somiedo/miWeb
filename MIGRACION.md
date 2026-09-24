@@ -348,3 +348,12 @@ se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Wor
 - `pnpm dev` pasa a `hugo server --renderToMemory`: el servidor de desarrollo escribía en `public/` y podía colarse en un despliegue.
 - Cloudflare Web Analytics activado: sitio `miweb.pablo-somiedo.workers.dev`, token público en `params.yaml`, script con `type="module"` como el snippet del panel.
 - Segundo despliegue (versión `979df4ce`) con `baseURL` correcto (canónicas, sitemap, robots y RSS) y analítica verificada (beacon 200, `cdn-cgi/rum` 204).
+
+## 14. Fase 5: despliegue automático con Workers Builds (2026-09-24)
+
+- Push de la rama `hugoblox` a GitHub (autorizado por Pablo). `master` intacto (`5d7c77b`).
+- Worker `miweb` conectado a `somiedo/miWeb` desde el panel (app de GitHub con acceso solo a este repo).
+  Build command `pnpm build`, deploy command `npx wrangler deploy`, build variables `HUGO_VERSION=0.162.0`,
+  `GO_VERSION=1.27.1`, `NODE_VERSION=22.23.3`, `PNPM_VERSION=10.14.0`. Sin API token propio ni secrets en GitHub.
+- **Rama de producción temporal: `hugoblox`**, para no compilar el `master` de Wowchemy. Tras el merge se cambia a `master`.
+- Sustituye al workflow de GitHub Actions del plan original (`.github/workflows/deploy.yml` no se crea).
