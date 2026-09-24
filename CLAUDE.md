@@ -8,7 +8,7 @@ Idioma del sitio y de la documentación: español.
 ```bash
 mise install                        # herramientas con las versiones de mise.toml
 pnpm install --frozen-lockfile      # dependencias Node (Tailwind, Pagefind)
-pnpm dev                            # hugo server en http://localhost:1313
+pnpm dev                            # hugo server en http://localhost:1313 (en memoria: no toca public/)
 pnpm build                          # hugo --gc --minify + Pagefind → public/
 hugo --gc --minify --printPathWarnings --printI18nWarnings   # compilación con avisos
 hugo mod graph                      # módulos HugoBlox y sus versiones

@@ -2,7 +2,7 @@
   "name": "miweb",
   "private": true,
   "scripts": {
-    "dev": "hugo server --disableFastRender",
+    "dev": "hugo server --disableFastRender --renderToMemory",
     "build": "hugo --gc --minify && pnpm run pagefind",
     "pagefind": "pagefind --site public"
   },

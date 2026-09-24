@@ -6,8 +6,8 @@
 # Website name (set in params.yaml under hugoblox.branding.name)
 title: ''
 # Website URL
-# Pendiente (Fase 4): URL definitiva del Worker en workers.dev
-baseURL: 'https://example.com/'
+# URL del Worker en workers.dev (cambiar al pasar a dominio propio)
+baseURL: 'https://miweb.pablo-somiedo.workers.dev/'
 
 ############################
 ## LANGUAGE
