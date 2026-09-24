@@ -306,8 +306,25 @@ y el contenido de demo (`/publication/`, `/project/`, `/talk/`…).
 - Revisión visual en `hugo server`: portada, post, listado del blog, 404, modo oscuro y claro, móvil (375 px) sin scroll horizontal.
 
 **Riesgos nuevos**
-- La plantilla carga fuentes desde Google Fonts (`fonts.googleapis.com`): transfiere la IP del visitante a Google
-  (sentencia LG München 2022). Alternativa: autoalojar las fuentes. Pendiente de decisión.
+- ~~La plantilla carga fuentes desde Google Fonts~~ → resuelto en la Fase 3 (fuentes autoalojadas).
 - Pie con atribución "Made with Hugo Blox Kit" (`hugoblox.pro.hide_attribution: false`).
 - `baseURL` sigue siendo `https://example.com/` hasta conocer la URL de `workers.dev` (Fase 4): afecta a sitemap,
   RSS, URL canónica y Open Graph.
+
+## 12. Fase 3: limpieza del repo (2026-09-24)
+
+Decisiones aplicadas (propuestas en la Fase 2, confirmadas con "ok sigue"): se acepta la formación duplicada,
+se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Worker se llamará `miweb`.
+
+- **Eliminado** (135 ficheros): `exampleSite/`, `netlify.toml`, `update_wowchemy.sh`, `view.sh`, `theme.toml`,
+  `scripts/init_kickstart.sh`, `images/`, `.gitmodules`, `SubirCambios.md`, `academic.Rproj` y `.hugo_build.lock`
+  (versionado por error; ya ignorado). Todo sigue disponible en `master`.
+- **`.gitignore`**: el de la plantilla (`public/`, `resources/`, `node_modules/`, `.hugo_build.lock`, `hugo_stats.json`,
+  `.env`, `.DS_Store`…) más `.wrangler/`, `.dev.vars*` e `.idea/` (aplicado en la Fase 1).
+- **Fuentes autoalojadas** en `assets/dist/font/` (Lora y Source Serif 4 variables, Source Code Pro 400; subconjunto
+  latin de Fontsource 5.3.0, OFL 1.1). HugoBlox genera `@font-face` locales y deja de enlazar `fonts.googleapis.com`.
+  Origen y licencias en `assets/dist/font/README.md`. Sin cursivas reales: el navegador las simula, igual que antes con Google Fonts.
+- **`LICENSE.md`**: contenido bajo CC BY 4.0 y código bajo MIT (sustituye a la MIT del starter de George Cushen), con la sección de terceros.
+- **`README.md`** reescrito (qué es, requisitos, uso en local, estructura, cómo añadir un post, despliegue) y **`CLAUDE.md`** nuevo.
+- `package.json`: script `build` = `hugo --gc --minify && pnpm run pagefind` (comando único para local y Cloudflare).
+- Se mantiene `.editorconfig` (genérico: UTF-8, LF, 2 espacios).

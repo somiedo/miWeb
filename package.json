@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "hugo server --disableFastRender",
-    "build": "hugo --minify && pnpm run pagefind",
-    "lint": "echo 'TODO: add lint script'",
+    "build": "hugo --gc --minify && pnpm run pagefind",
     "pagefind": "pagefind --site public"
   },
   "dependencies": {
@@ -16,5 +15,5 @@
   },
   "version": "1.0.0",
   "packageManager": "pnpm@10.14.0",
-  "description": "Academic CV starter template for Hugo Blox with Tailwind CSS v4"
+  "description": "Web personal de Pablo García (HugoBlox Academic CV + Cloudflare Workers)"
 }
