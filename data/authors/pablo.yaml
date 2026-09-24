@@ -1,0 +1,129 @@
+schema: hugoblox/author/v1
+slug: pablo
+is_owner: true
+name:
+  display: Pablo García
+  given: Pablo
+  family: García
+role: Data scientist de la Vida
+bio: |
+  Biólogo de formación y de vocación, me encanta aprovechar las posibilidades que nos brindan las nuevas tecnologías, habiendo desarrollado parte de mi carrera profesional en el campo de la consultoría informática ahora me centro en las Ciencias de la Vida.
+
+  **Máster en Bioinformática de la UOC / Universidad de Barcelona** con Trabajo Final de Máster titulado *Redes Generativas Adversarias con múltiples discriminadores*.
+
+affiliations:
+  - name: Universidad Complutense de Madrid
+    url: https://www.ucm.es/
+  - name: Universitat Oberta de Catalunya
+    url: https://www.uoc.edu/
+
+links:
+  - icon: at-symbol
+    url: mailto:pablo.somiedo@gmail.com
+    label: Escríbeme
+  - icon: brands/github
+    url: https://github.com/somiedo
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/pablosomiedo/
+  - icon: brands/x
+    url: https://x.com/pabloSomiedo
+
+interests:
+  - Biología de la conservación
+  - Ecología de poblaciones
+  - Análisis de datos
+  - R y Python
+
+education:
+  - degree: Máster en Bioinformática y Bioestadística
+    institution: UOC / Universidad de Barcelona
+    year: 2023
+    end: '2023'
+  - degree: Licenciado en Ciencias Biológicas
+    institution: Universidad Complutense de Madrid
+    year: 1994
+    end: '1994'
+
+experience:
+  - role: Medio ambiente
+    org: TRAGSA · SEO · DYPSA-ENTORNO
+    start: 1993-07-01
+    icon: custom/medio_ambiente
+    summary: |
+      * Proyecto entorno Parque Natural
+      * Censos de especies
+      * Educación ambiental
+      * Análisis de datos ambientales
+  - role: Desarrollo web
+    org: Freelance
+    start: 2008-04-01
+    icon: custom/web
+    summary: |
+      * Diseño web
+      * Analítica web
+      * Administración de usuarios
+      * Redes sociales
+  - role: Tecnologías de la información y la comunicación
+    org: Capgemini · Modus Management
+    start: 2000-11-01
+    end: 2012-04-01
+    icon: custom/tic
+    summary: |
+      * Análisis y reporting
+      * Bases de datos
+      * Diseño web
+      * Administración de sistemas
+
+skills:
+  - name: Herramientas
+    items:
+      - label: R
+        icon: brands/r
+      - label: Python
+        icon: brands/python
+      - label: SQL
+        icon: hero/circle-stack
+      - label: GitHub
+        icon: brands/github
+      - label: QGIS
+        icon: brands/qgis
+      - label: Estadística
+        icon: hero/chart-bar
+
+awards:
+  - title: Curso maestro de Python 3
+    awarder: Udemy
+    date: "2021-02-01"
+    url: https://ude.my/UC-b0c0ea22-e31f-4413-bcfd-8dc1c0b79f9e
+    icon: custom/Udemy
+  - title: Excel Total
+    awarder: Udemy
+    date: "2021-09-01"
+    url: https://ude.my/UC-c81feb7e-ee80-4f05-b16b-694dfb1c98ce/
+    icon: custom/Udemy
+  - title: Tensorflow 2.0 Guía completa para el Nuevo Tensorflow
+    awarder: Udemy
+    date: "2019-12-01"
+    url: https://ude.my/UC-HLOUITLR
+    icon: custom/Udemy
+  - title: Tensorflow para Machine Learning e IA
+    awarder: Udemy
+    date: "2019-03-01"
+    url: https://ude.my/UC-RW2CDWOE
+    icon: custom/Udemy
+  - title: Machine Learning Data Science en Python
+    awarder: Udemy
+    date: "2019-02-01"
+    url: https://ude.my/UC-HM566PAQ
+    icon: custom/Udemy
+  - title: Curso de QGIS
+    awarder: MappingGIS
+    date: "2016-01-14"
+    summary: Manejo del software QGIS
+    icon: custom/MappingGIS
+  - title: RPAS Pilot Certificate
+    awarder: Spanish-ATO
+    date: "2014-11-01"
+    summary: Certificación piloto RPAS (drones hasta 25 kg)
+    url: uploads/certificado-drones.pdf
+    icon: custom/Spanish-ATO

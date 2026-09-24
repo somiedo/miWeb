@@ -1,0 +1,7 @@
+# Traducciones propias que sustituyen a las de HugoBlox (modules/blox/i18n/es.yaml)
+
+- id: experience
+  translation: Trayectoria
+
+- id: education
+  translation: Formación

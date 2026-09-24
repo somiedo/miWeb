@@ -1,0 +1,18 @@
+# Redirecciones (_redirects) para Cloudflare Workers Static Assets
+# Generado por layouts/index.redirects (sustituye al del módulo integrations/netlify).
+# Documentación: https://developers.cloudflare.com/workers/static-assets/redirects/
+# URLs de la web antigua (Wowchemy):
+/post/ /blog/ 301
+/post/* /blog/:splat 301
+/tag/* /tags/:splat 301
+/category/* /tags/:splat 301
+/uploads/PABLO_GARCIA_MARTIN_2022_Bioinf.pdf /uploads/CV_PABLO_GARCIA_MARTIN_Bioinf.pdf 301
+/uploads/Pablo_Garcia.pdf /uploads/CV_PABLO_GARCIA_MARTIN_Bioinf.pdf 301
+{{- /* Alias declarados en el front matter (`aliases:`) */ -}}
+{{- range $s := hugo.Sites -}}
+{{- range $page := where $s.Pages ".Aliases" "!=" nil -}}
+{{- range $page.Aliases }}
+{{ . }} {{ $page.RelPermalink }} 301
+{{- end -}}
+{{- end -}}
+{{- end }}

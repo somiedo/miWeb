@@ -229,7 +229,20 @@ Según <https://developers.cloudflare.com/workers/ci-cd/builds/> y `.../builds/b
 
 ## 8. Registro de cambios de URL
 
-_(Se completará en la Fase 2.)_
+Redirecciones 301 generadas en `public/_redirects` por `layouts/index.redirects`:
+
+| URL antigua | URL nueva | Motivo |
+|---|---|---|
+| `/post/` | `/blog/` | La plantilla usa la sección `blog` |
+| `/post/primer-post/` | `/blog/primer-post/` | idem (regla `/post/*`) |
+| `/post/tomando-notas-con-logseq/` | `/blog/tomando-notas-con-logseq/` | idem |
+| `/tag/<etiqueta>/` | `/tags/<etiqueta>/` | Ruta de taxonomía de Hugo por defecto |
+| `/category/opinion/`, `/category/herramientas/` | `/tags/opinion/`, `/tags/herramientas/` | Categorías fusionadas en etiquetas |
+| `/uploads/PABLO_GARCIA_MARTIN_2022_Bioinf.pdf`, `/uploads/Pablo_Garcia.pdf` | `/uploads/CV_PABLO_GARCIA_MARTIN_Bioinf.pdf` | PDFs antiguos eliminados → CV actual |
+
+Sin redirección (no aplica): anclas de la portada (`#about` → `#biografia`, `#posts` → `#blog`, `#contact` → `#contacto`;
+los navegadores no envían el ancla al servidor), posts en borrador eliminados (nunca publicados),
+y el contenido de demo (`/publication/`, `/project/`, `/talk/`…).
 
 ## 10. Fase 1: esqueleto HugoBlox (2026-09-24)
 
@@ -253,3 +266,48 @@ _(Se completará en la Fase 2.)_
   3. pnpm ignora el script de build de `@parcel/watcher` (dependencia de Tailwind CLI para modo *watch*); la compilación no lo necesita.
 - **Verificado:** `hugo --gc --minify` sin errores ni warnings (`--printPathWarnings --printI18nWarnings`), Pagefind indexa,
   `hugo server` sirve `/` (200) y una ruta inexistente devuelve la 404 propia.
+
+## 11. Fase 2: migración de contenido (2026-09-24)
+
+**Trasladado**
+- Perfil → `data/authors/pablo.yaml` (esquema `hugoblox/author/v1`, `slug: pablo`, `is_owner: true`), avatar en
+  `assets/media/authors/pablo.jpg`. Incluye bio, afiliaciones, enlaces, intereses, formación, experiencia,
+  habilidades y certificaciones (como `awards`).
+- Portada (`content/_index.md`): biografía con botón "Descarga mi CV" → habilidades → trayectoria → certificaciones →
+  últimos posts → contacto (bloque `markdown`). Anclas: `#biografia`, `#habilidades`, `#trayectoria`, `#certificaciones`, `#blog`, `#contacto`.
+- Posts publicados → `content/blog/` (autor `pablo`, categorías fusionadas en etiquetas en minúsculas).
+  Rutas de imagen `./img` → `img` (el render hook de HugoBlox no resuelve `./`); texto alternativo significativo.
+- Logos propios → `assets/media/icons/custom/` (`custom/<nombre>`): se muestran en experiencia y certificaciones.
+- Config: idioma `es` (`locale: es-es`), menú Inicio/Blog/Etiquetas/Contacto, nombre, lema, descripción SEO, X `pabloSomiedo`,
+  color primario `#4caf50`, fechas en español, licencia CC BY 4.0 en el pie, `frame_options: sameorigin`,
+  sin selector de idioma ni selector de paletas ("Theme", sin traducir). Se elimina la taxonomía `publication_types`.
+- `i18n/es.yaml`: "Trayectoria" y "Formación" en lugar de "Experiencia" y "Educación".
+- Cloudflare Web Analytics: hook `layouts/_partials/hooks/body-end/cloudflare-web-analytics.html`, activo solo en
+  producción cuando `params.cloudflare_web_analytics.token` tiene valor (token pendiente de crear en la Fase 4).
+
+**Cambios y pérdidas respecto a Wowchemy**
+- **Bio corta** ("Biólogo que no para de estudiar…"): el esquema nuevo solo tiene `bio`; se usa la bio larga.
+- **Ubicación** "España" de cada experiencia: el bloque no tiene campo de ubicación → no se muestra.
+- **Formación duplicada**: el bloque de trayectoria muestra siempre la formación del perfil, además de la tarjeta
+  "Formación" de la biografía. Se añade `end` con el año para que no aparezca "Actualmente".
+- **Habilidades**: sin niveles (no los había); el bloque las muestra en mayúsculas.
+- **Contacto**: el bloque `contact-info` tiene textos en inglés fijos en el código ("Click to copy", "Send a message") →
+  sustituido por un bloque `markdown`. Sin teléfono, dirección ni formulario.
+- **Nube de etiquetas**: sustituida por el enlace "Etiquetas" (`/tags/`) del menú.
+- **Curso de QGIS**: sin enlace (el PDF de MappingGIS no existía).
+- **Enlaces de Udemy** (`ude.my/…`): pasados a https; redirigen a `udemy.com/s/?hash=…` y Udemy bloquea la comprobación
+  automática (403). **Pendiente: comprobarlos a mano en el navegador.**
+- Título de la pestaña de la 404: "404 Page not found" (valor por defecto de Hugo; el contenido de la página sí está en español).
+
+**Verificado**
+- `hugo --gc --minify` sin warnings; Pagefind indexa los 2 posts.
+- Sin enlaces internos rotos (comprobación automática sobre la salida compilada) ni imágenes huérfanas
+  (eliminado `assets/media/slides-logo.svg` de la plantilla); los 6 logos propios se renderizan.
+- Revisión visual en `hugo server`: portada, post, listado del blog, 404, modo oscuro y claro, móvil (375 px) sin scroll horizontal.
+
+**Riesgos nuevos**
+- La plantilla carga fuentes desde Google Fonts (`fonts.googleapis.com`): transfiere la IP del visitante a Google
+  (sentencia LG München 2022). Alternativa: autoalojar las fuentes. Pendiente de decisión.
+- Pie con atribución "Made with Hugo Blox Kit" (`hugoblox.pro.hide_attribution: false`).
+- `baseURL` sigue siendo `https://example.com/` hasta conocer la URL de `workers.dev` (Fase 4): afecta a sitemap,
+  RSS, URL canónica y Open Graph.

@@ -1,35 +1,79 @@
 ---
-title: "Academic Cv"
+# Título vacío: usa el nombre del sitio
+title: ''
+summary: ''
 type: landing
-design:
-  spacing: "5rem"
 
 sections:
-  - block: hero
+  - block: resume-biography-3
+    id: biografia
     content:
-      eyebrow: "You're live on HugoBlox"
-      title: "Great job launching Academic Cv"
-      text: "Start customizing blocks to launch your next experience."
-      primary_action:
-        text: "Join our Discord"
-        url: "https://hugoblox.com/discord"
-        icon: "chat-bubble-left-right"
-      secondary_action:
-        text: "Upgrade to Pro"
-        url: "https://hugoblox.com/pro"
-      tertiary_action:
-        text: "View Docs"
-        url: "https://docs.hugoblox.com"
+      username: pablo
+      text: ''
+      button:
+        text: Descarga mi CV
+        url: uploads/CV_PABLO_GARCIA_MARTIN_Bioinf.pdf
+      headings:
+        about: Biografía
+        education: Formación
+        interests: Intereses
     design:
-      css_class: "bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
-      spacing:
-        padding: ["4rem", 0, "4rem", 0]
-  - block: markdown
+      background:
+        gradient_mesh:
+          enable: true
+      name:
+        size: md
+      avatar:
+        size: medium
+        shape: circle
+
+  - block: resume-skills
+    id: habilidades
     content:
-      title: "Your next steps"
-      text: |
-        1. Join the community on [Discord](https://hugoblox.com/discord) for support and inspiration.
-        2. Explore the [documentation](https://docs.hugoblox.com) to learn how to add blocks, deploy, and automate.
-        3. [Upgrade to Pro](https://hugoblox.com/pro) to unlock premium blocks, design systems, and automation-ready packages.
-        4. Share feedback and showcase your build to help the ecosystem grow.
+      title: Habilidades
+      username: pablo
+
+  - block: resume-experience
+    id: trayectoria
+    content:
+      title: Trayectoria
+      username: pablo
+    design:
+      date_format: 'January 2006'
+      is_education_first: false
+
+  - block: resume-awards
+    id: certificaciones
+    content:
+      title: Certificaciones
+      username: pablo
+    design:
+      date_format: 'January 2006'
+
+  - block: collection
+    id: blog
+    content:
+      title: Últimos posts
+      page_type: blog
+      count: 5
+      offset: 0
+      order: desc
+      filters:
+        exclude_future: false
+        exclude_past: false
+    design:
+      view: date-title-summary
+      columns: '1'
+
+  - block: markdown
+    id: contacto
+    content:
+      title: Contacto
+      text: |-
+        ¿Quieres comentar un proyecto o simplemente charlar? Escríbeme a
+        [pablo.somiedo@gmail.com](mailto:pablo.somiedo@gmail.com) o encuéntrame en
+        [GitHub](https://github.com/somiedo), [LinkedIn](https://www.linkedin.com/in/pablosomiedo/)
+        y [X](https://x.com/pabloSomiedo).
+    design:
+      columns: '1'
 ---

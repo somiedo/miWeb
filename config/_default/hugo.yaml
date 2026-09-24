@@ -6,13 +6,14 @@
 # Website name (set in params.yaml under hugoblox.branding.name)
 title: ''
 # Website URL
+# Pendiente (Fase 4): URL definitiva del Worker en workers.dev
 baseURL: 'https://example.com/'
 
 ############################
 ## LANGUAGE
 ############################
 
-defaultContentLanguage: en
+defaultContentLanguage: es
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
@@ -54,7 +55,6 @@ timeout: 600000
 taxonomies:
   author: authors
   tag: tags
-  publication_type: publication_types
 markup:
   _merge: deep
   highlight:
