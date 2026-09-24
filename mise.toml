@@ -1,0 +1,7 @@
+# Versiones fijadas del entorno (ver MIGRACION.md §6 para el origen de cada una).
+# Mantener sincronizadas con las variables de Workers Builds (HUGO_VERSION, GO_VERSION, NODE_VERSION, PNPM_VERSION).
+[tools]
+hugo-extended = "0.162.0"
+go = "1.27.1"
+node = "22.23.3"
+pnpm = "10.14.0"
