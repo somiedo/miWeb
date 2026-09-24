@@ -347,4 +347,4 @@ se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Wor
 - `baseURL` → `https://miweb.pablo-somiedo.workers.dev/` (el primer despliegue salió con `example.com` en canónicas y sitemap).
 - `pnpm dev` pasa a `hugo server --renderToMemory`: el servidor de desarrollo escribía en `public/` y podía colarse en un despliegue.
 - Cloudflare Web Analytics activado: sitio `miweb.pablo-somiedo.workers.dev`, token público en `params.yaml`, script con `type="module"` como el snippet del panel.
-- Pendiente: redesplegar con el `baseURL` correcto y la analítica.
+- Segundo despliegue (versión `979df4ce`) con `baseURL` correcto (canónicas, sitemap, robots y RSS) y analítica verificada (beacon 200, `cdn-cgi/rum` 204).
