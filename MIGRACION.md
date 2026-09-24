@@ -368,3 +368,15 @@ se autoalojan las fuentes, los enlaces de Udemy los revisa Pablo a mano y el Wor
 - Solución: `pnpm build` → `scripts/build.sh`, que si el Hugo del sistema no es la versión extended exacta ejecuta
   `scripts/install-hugo.sh`: descarga `hugo_extended_<v>_linux-<arch>.tar.gz` de las releases oficiales de GitHub y verifica
   su SHA-256 contra un hash fijado en el script (tomado de `hugo_0.162.0_checksums.txt`). Se instala en `./.bin` (ignorado).
+- **Tercer intento correcto** (commit `a277e71`): Workers Builds descargó Hugo extended verificado, compiló y desplegó la
+  versión `96b6308f` (16:44 UTC). Verificado en producción: páginas 200, 404 propia, 301, PDFs, sitemap, Pagefind, fuentes,
+  cabeceras, analítica y canónicas. Cada build tarda ~10 min en arrancar desde el push (cola de Cloudflare).
+- No se crea API token ni secrets en GitHub: Workers Builds usa la conexión del panel.
+
+## 15. Pendiente tras la Fase 5
+
+- Merge `hugoblox` → `master` y cambio de la rama de producción de Workers Builds a `master` (plan en el chat, pendiente de OK).
+- Qué hacer con `somiedo.github.io` (recomendaciones en el chat).
+- Comprobar a mano los enlaces de Udemy.
+- Copia antigua en OneDrive (`~/Library/CloudStorage/OneDrive-Personal/GitHub/miWeb`): contiene la rama local `lists`, que no
+  está en GitHub. Revisarla antes de borrar esa copia.
